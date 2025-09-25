@@ -7,6 +7,7 @@ import SolutionSection from "@/components/solution-section"
 import AppPreviewSection from "@/components/app-preview-section"
 import FeaturesSection from "@/components/features-section"
 import PlatformSection from "@/components/platform-section"
+import LaunchSection from "@/components/launch-section"
 import ContactSection from "@/components/contact-section"
 import ShaderBackground from "@/components/shader-background"
 import FloatingParticles from "@/components/floating-particles"
@@ -27,6 +28,7 @@ export default function InternSyncLanding() {
         <AppPreviewSection />
         <FeaturesSection />
         <PlatformSection />
+        <LaunchSection />
         <ContactSection />
       </div>
     </div>

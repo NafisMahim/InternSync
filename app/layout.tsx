@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Figtree } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { Instrument_Serif } from "next/font/google"
+import ClientLayout from "./client-layout"
 import "./globals.css"
 
 const figtree = Figtree({
@@ -21,8 +22,8 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "InternSync - The Future of Internship Matching",
+  description: "Connect students with their dream internships through AI-powered matching",
   generator: "v0.app",
 }
 
@@ -32,18 +33,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <style>{`
-html {
-  font-family: ${figtree.style.fontFamily};
-  --font-sans: ${figtree.variable};
-  --font-mono: ${GeistMono.variable};
-  --font-instrument-serif: ${instrumentSerif.variable};
-}
-        `}</style>
-      </head>
-      <body className={`${figtree.variable} ${instrumentSerif.variable}`}>{children}</body>
-    </html>
+    <ClientLayout
+      figtreeVariable={figtree.variable}
+      instrumentSerifVariable={instrumentSerif.variable}
+      geistMonoVariable={GeistMono.variable}
+      figtreeFontFamily={figtree.style.fontFamily}
+    >
+      {children}
+    </ClientLayout>
   )
 }
